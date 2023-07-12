@@ -6,14 +6,28 @@ class Player:
         self.username = username
         self._results = []
         self._games_played = []
-        
+
+    def __repr__(self):
+        return f"{self.username}"
+
+    def get_username(self):
+        return self._username 
+    def set_username(self, username):
+        if isinstance(username, str) and 2 <= len(username) <= 16:
+            self._username = username
+        else:
+            raise Exception("Username must be 2-16 characters long.")
+    username = property(get_username, set_username)
+
     def results(self, new_result=None):
         from classes.result import Result
-        pass
+        if isinstance(new_result, Result):
+            # print(self.player)
+            self._results.append(new_result)
+        return self._results
     
-    def games_played(self, new_game=None):
-        from classes.game import Game
-        pass
+    def games_played(self):
+        return [result.game for result in self.results()]
     
     def played_game(self, game):
         pass
@@ -23,5 +37,5 @@ class Player:
     
     @classmethod
     def highest_scored(cls, game):
-        pass
+        pass 
         
