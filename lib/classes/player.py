@@ -30,10 +30,14 @@ class Player:
         return [result.game for result in self.results()]
     
     def played_game(self, game):
-        pass
+        for result in self._results:
+            if game == result.game:
+                return True
+        return False
     
     def num_times_played(self, game):
-        pass
+        return len([result for result in self._results if result.game == game])
+
     
     @classmethod
     def highest_scored(cls, game):

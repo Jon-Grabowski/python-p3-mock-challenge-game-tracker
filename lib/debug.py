@@ -12,9 +12,10 @@ if __name__ == '__main__':
     g2 = Game("Go Fish")
     p1 = Player("Jon")
     p2 = Player("Bob")
-    r1 = Result(p1, g1, 2000)
+    r1 = Result(p1, g1, 1500)
     r2 = Result(p1, g2, 500)
-    r2 = Result(p2, g1, 1500)
+    r3 = Result(p2, g1, 1500)
+    r4 = Result(p1, g1, 1000)
 
 
     ipdb.set_trace()

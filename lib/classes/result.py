@@ -7,6 +7,7 @@ class Result:
         self.player = player
         self.game = game
         self.score = score
+        self.all.append(self)
         self.player.results(self)
         self.game.results(self)
         self.game.players(self.player)
